@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dear America: Your Rights Are on the Line</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --crimson: #C41E3A;
+      --crimson-dark: #a0182f;
+      --teal: #67BCB8;
+      --teal-dark: #4fa09c;
+      --gold: #F4D081;
+      --dark: #0D0D0D;
+      --cream: #F8F6F2;
+      --white: #FFFFFF;
+      --body: #1A1A1A;
+      --muted: #555;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--body);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .announce {
+      background: var(--crimson);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5vw;
+      height: 64px;
+      border-bottom: 3px solid var(--crimson);
+    }
+
+    .nav-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 15px;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-logo span { color: var(--crimson); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--teal); }
+
+    .nav-lang {
+      display: flex;
+      gap: 6px;
+    }
+
+    .nav-lang a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 5px 10px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .nav-lang a.active {
+      background: var(--teal);
+      color: var(--white);
+      border-color: var(--teal);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 5vw;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(196,30,58,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(103,188,184,0.10) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1.5px solid var(--teal);
+      padding: 6px 16px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 7vw, 5.5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.0;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--crimson);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 0 auto 40px;
+      font-weight: 400;
+    }
+
+    .hero-sub strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--crimson);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--crimson-dark); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--teal);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 14px 34px;
+      border: 2px solid var(--teal);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: var(--teal);
+      color: var(--dark);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.3);
+      font-size: 22px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ── CRISIS BAND ── */
+    .crisis-band {
+      background: var(--crimson);
+      padding: 48px 5vw;
+      text-align: center;
+    }
+
+    .crisis-band p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.55;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .crisis-band p::before {
+      content: '"';
+      font-size: 3em;
+      line-height: 0;
+      vertical-align: -0.4em;
+      color: rgba(255,255,255,0.25);
+      margin-right: 8px;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      padding: 80px 5vw;
+    }
+
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .section-headline {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    /* ── NARRATIVE CARDS ── */
+    .narrative { background: var(--cream); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      border-top: 4px solid var(--teal);
+      padding-top: 24px;
+    }
+
+    .card-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+      color: var(--body);
+    }
+
+    .card p {
+      font-size: 0.98rem;
+      color: #555;
+      line-height: 1.75;
+    }
+
+    /* ── LETTERS ── */
+    .letters-section { background: var(--white); }
+
+    .letters-header {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .filter-btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border: 1.5px solid var(--teal);
+      background: transparent;
+      color: var(--body);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .letters-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .letter-card {
+      border-top: 3px solid var(--crimson);
+      padding-top: 20px;
+      transition: transform 0.2s;
+    }
+
+    .letter-card:hover { transform: translateY(-4px); }
+
+    .letter-tag {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      margin-bottom: 14px;
+    }
+
+    .letter-issue {
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-left: 8px;
+    }
+
+    .letter-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--body);
+    }
+
+    .letter-card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .letter-attr {
+      font-size: 0.82rem;
+      color: #888;
+      font-style: normal;
+      margin-bottom: 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+
+    .read-more {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      text-decoration: none;
+      border-bottom: 2px solid var(--teal);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+
+    .read-more:hover { color: var(--teal-dark); }
+
+    /* ── DEMANDS ── */
+    .demands {
+      background: var(--dark);
+      text-align: center;
+    }
+
+    .demands .section-headline { color: var(--white); }
+    .demands .section-label { color: var(--teal); }
+
+    .demands-list {
+      list-style: none;
+      max-width: 760px;
+      margin: 0 auto;
+      counter-reset: demands;
+      text-align: left;
+    }
+
+    .demands-list li {
+      counter-increment: demands;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: var(--white);
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .demands-list li::before {
+      content: counter(demands);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--gold);
+      min-width: 40px;
+      line-height: 1;
+      margin-top: -4px;
+    }
+
+    /* ── VOICES ── */
+    .voices { background: var(--cream); }
+
+    .voices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .voice-card {
+      background: var(--white);
+      padding: 32px;
+    }
+
+    .voice-avatar {
+      width: 72px;
+      height: 72px;
+      background: #ddd;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #aaa;
+      overflow: hidden;
+    }
+
+    .voice-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .voice-title {
+      font-size: 0.85rem;
+      color: var(--teal);
+      font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+    }
+
+    .voice-quote {
+      border-left: 4px solid var(--teal);
+      padding-left: 16px;
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .voice-placeholder {
+      background: #f0f0f0;
+      border-radius: 4px;
+      height: 14px;
+      margin-bottom: 8px;
+    }
+
+    .voice-placeholder.short { width: 60%; }
+
+    /* ── FORM ── */
+    .form-section {
+      background: var(--crimson);
+    }
+
+    .form-section .section-headline { color: var(--white); }
+    .form-section .section-label { color: rgba(255,255,255,0.7); }
+    .form-section .section-sub { color: rgba(255,255,255,0.85); max-width: 560px; }
+
+    .form-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .form-field label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 14px 16px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(255,255,255,0.45);
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: rgba(255,255,255,0.7);
+    }
+
+    .form-field select option { background: var(--crimson); }
+
+    .form-field textarea { resize: vertical; min-height: 120px; }
+
+    .form-check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .form-check input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      flex-shrink: 0;
+      accent-color: var(--dark);
+    }
+
+    .form-check label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+
+    .btn-submit {
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 18px 48px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover { background: #222; }
+
+    .form-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    /* ── STAKES ── */
+    .stakes { background: var(--white); }
+
+    .stakes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      border: 1px solid #e8e8e8;
+    }
+
+    .stake-tile {
+      padding: 36px 32px;
+      border-right: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e8e8e8;
+      border-top: 4px solid var(--crimson);
+      transition: border-top-color 0.2s;
+    }
+
+    .stake-tile:hover { border-top-color: var(--teal); }
+
+    .stake-icon {
+      width: 36px;
+      height: 4px;
+      background: var(--teal);
+      margin-bottom: 20px;
+    }
+
+    .stake-tile h3 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      color: var(--body);
+    }
+
+    .stake-tile p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.75;
+    }
+
+    /* ── TAKE ACTION ── */
+    .action { background: var(--dark); }
+
+    .action .section-headline { color: var(--white); }
+    .action .section-sub { color: rgba(255,255,255,0.6); }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .action-col {
+      border-top: 3px solid rgba(255,255,255,0.1);
+      padding-top: 28px;
+    }
+
+    .action-col h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .action-col p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .btn-action {
+      display: block;
+      background: var(--crimson);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 13px 24px;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+      margin-bottom: 10px;
+    }
+
+    .btn-action:hover { background: var(--crimson-dark); }
+
+    .btn-action-outline {
+      display: block;
+      background: transparent;
+      color: var(--teal);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 11px 24px;
+      border: 1.5px solid var(--teal);
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+      margin-bottom: 10px;
+    }
+
+    .btn-action-outline:hover {
+      background: var(--teal);
+      color: var(--dark);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #080808;
+      border-top: 4px solid var(--crimson);
+      padding: 48px 5vw 32px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand span { color: var(--crimson); }
+
+    .footer-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.7;
+    }
+
+    .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: var(--teal); }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    .social-icon:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 24px auto 0;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.7;
+    }
+
+    /* ── UTILS ── */
+    .center { text-align: center; }
+
+    .max-w {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .cards-grid,
+      .letters-grid,
+      .voices-grid,
+      .action-grid,
+      .stakes-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .cards-grid,
+      .letters-grid,
+      .voices-grid,
+      .action-grid,
+      .stakes-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce">
+    HUD civil rights workers are being silenced &nbsp;·&nbsp; This is their story
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Dear<span>America</span></a>
+    <ul class="nav-links">
+      <li><a href="#letters">Letters</a></li>
+      <li><a href="#demands">Demands</a></li>
+      <li><a href="#voices">Voices</a></li>
+      <li><a href="#share-your-story">Share Your Story</a></li>
+      <li><a href="#action">Take Action</a></li>
+    </ul>
+    <div class="nav-lang">
+      <a href="#" class="active">EN</a>
+      <a href="#">ES</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">A Campaign for Civil Rights &amp; Worker Dignity</div>
+      <h1>Dear America:<br/><em>Your Rights</em><br/>Are on the Line</h1>
+      <p class="hero-sub">
+        <strong>This is about YOUR rights.</strong> We are the workers trying to protect America against discrimination — and we are being silenced for it.
+      </p>
+      <div class="hero-btns">
+        <a href="#letters" class="btn-primary">Read the Letters</a>
+        <a href="#share-your-story" class="btn-secondary">Share Your Story</a>
+      </div>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </section>
+
+  <!-- CRISIS BAND -->
+  <div class="crisis-band">
+    <p>Federal workers at HUD are being silenced and retaliated against for doing their jobs — fighting to protect people from discrimination while being forced to violate their oath to serve the American public."</p>
+  </div>
+
+  <!-- NARRATIVE CARDS -->
+  <section class="section narrative">
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-num">01 — The Crisis</div>
+        <h3>Civil Rights Enforcement Is Under Attack</h3>
+        <p>Workers are being blocked, punished, and removed for doing their jobs — enforcing the laws that protect families from housing discrimination.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02 — The Workers</div>
+        <h3>Guardians of Our Civil Rights</h3>
+        <p>They are not bureaucrats. For years they have worked to stop discrimination in housing and protect vulnerable families. Now they are being silenced for it.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">03 — The Stakes</div>
+        <h3>When Enforcement Stops, Abuse Spreads</h3>
+        <p>Landlords discriminate freely. Banks go unchecked. Without federal workers willing to stand up, civil rights protections become meaningless on paper.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LETTERS -->
+  <section class="section letters-section" id="letters">
+    <div class="letters-header">
+      <div class="section-label">Firsthand Accounts</div>
+      <h2 class="section-headline">Their Words. Their Truth.</h2>
+      <p class="section-sub">These letters come from federal workers, former employees, surrogates, and allies — all speaking out about what is happening to civil rights enforcement in America.</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">HUD Workers</button>
+      <button class="filter-btn">Former Feds</button>
+      <button class="filter-btn">Electeds</button>
+      <button class="filter-btn">Community</button>
+      <button class="filter-btn">Civil Rights Orgs</button>
+      <button class="filter-btn">Faith Leaders</button>
+    </div>
+
+    <div class="letters-grid">
+
+      <div class="letter-card">
+        <div><span class="letter-tag">HUD Worker</span><span class="letter-issue">Fair Housing</span></div>
+        <h3>"I Did Not Leave. I Was Pushed Out."</h3>
+        <p>"I spent over a decade investigating housing discrimination. I took hundreds of complaints from families who had nowhere else to turn. What is happening at HUD right now is not a policy change. It is a systematic dismantling of the people and the office sworn to protect them..."</p>
+        <div class="letter-attr">Anonymous — HUD, Fair Housing Division</div>
+        <a href="#" class="read-more">Read Full Letter →</a>
+      </div>
+
+      <div class="letter-card">
+        <div><span class="letter-tag">Former Fed</span><span class="letter-issue">Retaliation</span></div>
+        <h3>"They Punished Me for Following the Law"</h3>
+        <p>"When I raised concerns about cases being buried and complaints going unanswered, I was reassigned. Then sidelined. Then let go. I am not the only one. This is a pattern, and the people who lose are the families we were supposed to protect..."</p>
+        <div class="letter-attr">Anonymous — Former HUD Employee, 11 years of service</div>
+        <a href="#" class="read-more">Read Full Letter →</a>
+      </div>
+
+      <div class="letter-card">
+        <div><span class="letter-tag">Community Leader</span><span class="letter-issue">Public Impact</span></div>
+        <h3>"My Clients Have No One Left to Call"</h3>
+        <p>"We send families to HUD because that is where the law says help exists. Now we are telling people to file complaints knowing they will not be heard. The agency that was supposed to be the last line of defense is no longer answering..."</p>
+        <div class="letter-attr" style="color:#C41E3A;font-style:italic;">[ Name &amp; org to be filled in ]</div>
+        <a href="#" class="read-more">Read Full Letter →</a>
+      </div>
+
+      <div class="letter-card">
+        <div><span class="letter-tag">Faith Leader</span><span class="letter-issue">Equality &amp; Dignity</span></div>
+        <h3>"When Government Abandons the Vulnerable, We All Lose"</h3>
+        <p>"Our faith calls us to speak when others cannot. Federal workers who devoted their careers to ensuring fair housing for all Americans are now afraid to go to work. That fear is by design. And it is costing our communities dearly..."</p>
+        <div class="letter-attr" style="color:#C41E3A;font-style:italic;">[ Name &amp; org to be filled in ]</div>
+        <a href="#" class="read-more">Read Full Letter →</a>
+      </div>
+
+      <div class="letter-card">
+        <div><span class="letter-tag">Elected Official</span><span class="letter-issue">Accountability</span></div>
+        <h3>"Congress Must Investigate HUD Leadership Now"</h3>
+        <p>"What I have heard from workers in my district is alarming. Career civil servants are being retaliated against for enforcing federal law. Cases are being buried. Offices are being gutted. I am calling for an immediate congressional investigation..."</p>
+        <div class="letter-attr" style="color:#C41E3A;font-style:italic;">[ Elected official to be confirmed ]</div>
+        <a href="#" class="read-more">Read Full Letter →</a>
+      </div>
+
+      <div class="letter-card">
+        <div><span class="letter-tag">HUD Worker</span><span class="letter-issue">Language Access</span></div>
+        <h3>"Millions Lost Access to Help — In Silence"</h3>
+        <p>"Language access protections exist so that non-English-speaking families can access their legal rights. When those protections were stripped, there were no announcements. No explanation. Just an order. And millions of people suddenly had no path to justice..."</p>
+        <div class="letter-attr">Anonymous — HUD, Office of Fair Housing</div>
+        <a href="#" class="read-more">Read Full Letter →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEMANDS -->
+  <section class="section demands center" id="demands">
+    <div class="max-w">
+      <div class="section-label">Our Position</div>
+      <h2 class="section-headline" style="color:var(--white);margin-bottom:48px;">What We're Demanding</h2>
+      <ol class="demands-list">
+        <li>Immediate rehiring of the Fair Housing 3</li>
+        <li>Congressional investigation into HUD leadership</li>
+        <li>Immediate restoration of language access protections</li>
+        <li>End to political interference in civil rights enforcement</li>
+        <li>Full reinstatement of paused and rejected fair housing cases</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- VOICES -->
+  <section class="section voices" id="voices">
+    <div class="max-w">
+      <div class="section-label">Surrogates &amp; Allies</div>
+      <h2 class="section-headline">Who's Speaking Out</h2>
+      <p class="section-sub">Federal workers cannot always use their own names. But they are not alone. These voices stand with them.</p>
+    </div>
+    <div class="voices-grid">
+      <div class="voice-card">
+        <div class="voice-avatar">?</div>
+        <div class="voice-name">[ Name ]</div>
+        <div class="voice-title">[ Title / Affiliation ]</div>
+        <div class="voice-quote">[ Pull quote from their letter or statement — 1 to 2 sentences ]</div>
+        <a href="#" class="read-more">Read their letter →</a>
+      </div>
+      <div class="voice-card">
+        <div class="voice-avatar">?</div>
+        <div class="voice-name">[ Name ]</div>
+        <div class="voice-title">[ Title / Affiliation ]</div>
+        <div class="voice-quote">[ Pull quote from their letter or statement — 1 to 2 sentences ]</div>
+        <a href="#" class="read-more">Read their letter →</a>
+      </div>
+      <div class="voice-card">
+        <div class="voice-avatar">?</div>
+        <div class="voice-name">[ Name ]</div>
+        <div class="voice-title">[ Title / Affiliation ]</div>
+        <div class="voice-quote">[ Pull quote from their letter or statement — 1 to 2 sentences ]</div>
+        <a href="#" class="read-more">Read their letter →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="section form-section" id="share-your-story">
+    <div class="form-inner">
+      <div class="section-label">Add Your Voice</div>
+      <h2 class="section-headline">You Are Not Alone.</h2>
+      <p class="section-sub">Federal workers — current, former, and those who serve alongside them — can submit their stories here. All submissions are reviewed confidentially. Your identity is protected.</p>
+
+      <form>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Your Agency or Organization</label>
+            <input type="text" placeholder="e.g. HUD, CFPB, DOJ..." />
+          </div>
+          <div class="form-field">
+            <label>Your Role</label>
+            <select>
+              <option value="">Select one...</option>
+              <option>Current Federal Worker</option>
+              <option>Former Federal Worker</option>
+              <option>Elected Official or Staff</option>
+              <option>Civil Rights / Community Organization</option>
+              <option>Faith Leader</option>
+              <option>Housing Advocate</option>
+              <option>Other Ally or Surrogate</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Your Story</label>
+          <textarea placeholder="Share as much or as little as you feel safe sharing..."></textarea>
+        </div>
+        <div class="form-field">
+          <label>Contact Email <span style="font-weight:400;opacity:0.6;">(optional)</span></label>
+          <input type="email" placeholder="Only used if we need to follow up. Never published." />
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="consent" />
+          <label for="consent">I understand my submission will be reviewed before any publication, and my identity will be protected.</label>
+        </div>
+        <button type="submit" class="btn-submit">Submit Your Story</button>
+        <p class="form-note">Know someone with a story to tell? Connect them with us at <strong style="color:rgba(255,255,255,0.8);">[campaign email]</strong><br/>All communications are handled with care for worker safety.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- STAKES -->
+  <section class="section stakes">
+    <div class="max-w">
+      <div class="section-label">Why It Matters</div>
+      <h2 class="section-headline">What's at Stake</h2>
+    </div>
+    <div class="stakes-grid">
+      <div class="stake-tile">
+        <div class="stake-icon"></div>
+        <h3>Fair Housing Rights</h3>
+        <p>Without enforcement, the Fair Housing Act is just words on paper. Real families — denied loans, turned away from housing, trapped in unsafe conditions — have nowhere left to turn.</p>
+      </div>
+      <div class="stake-tile">
+        <div class="stake-icon"></div>
+        <h3>Language Access</h3>
+        <p>Millions of Americans depend on language access protections to assert their legal rights. Those protections are being stripped without explanation or announcement.</p>
+      </div>
+      <div class="stake-tile">
+        <div class="stake-icon"></div>
+        <h3>Worker Integrity &amp; Free Speech</h3>
+        <p>Federal workers are being punished for following the law. When public servants cannot speak up about illegal conduct, corruption hides in silence — and the public pays the price.</p>
+      </div>
+      <div class="stake-tile">
+        <div class="stake-icon"></div>
+        <h3>Democratic Accountability</h3>
+        <p>When enforcement is politicized, agencies stop serving the people and start serving whoever holds power. Government that ignores the law doesn't fail by accident.</p>
+      </div>
+      <div class="stake-tile">
+        <div class="stake-icon"></div>
+        <h3>Protection from Discrimination</h3>
+        <p>Fair housing law protects people on the basis of race, gender, religion, age, disability, and national origin. Dismantling enforcement is not a policy choice — it is a civil rights violation.</p>
+      </div>
+      <div class="stake-tile">
+        <div class="stake-icon"></div>
+        <h3>Government for the People</h3>
+        <p>Without independent enforcement, power concentrates among the wealthy and well-connected. Government becomes a tool of the powerful — not a protection for everyone else.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAKE ACTION -->
+  <section class="section action" id="action">
+    <div class="max-w">
+      <div class="section-label">Get Involved</div>
+      <h2 class="section-headline">This Is Not Over. Take Action.</h2>
+    </div>
+    <div class="action-grid">
+      <div class="action-col">
+        <h3>Read &amp; Share</h3>
+        <p>Every letter is a firsthand account of what is happening inside our federal agencies. Read them. Share them. The more people who know, the harder it is to keep this hidden.</p>
+        <a href="#letters" class="btn-action">Share This Page</a>
+      </div>
+      <div class="action-col">
+        <h3>Demand Accountability</h3>
+        <p>Contact your representative and demand a congressional investigation into HUD leadership. Ask them where they stand on the rehiring of the Fair Housing 3.</p>
+        <a href="https://www.house.gov/representatives/find-your-representative" class="btn-action" target="_blank">Find Your Rep →</a>
+      </div>
+      <div class="action-col">
+        <h3>Join the Movement</h3>
+        <p>This campaign is part of a broader movement to defend public servants, protect civil rights, and hold government accountable. Join us.</p>
+        <a href="https://www.branch-4.org" class="btn-action-outline" target="_blank">Branch 4 →</a>
+        <a href="https://www.federalunionists.net" class="btn-action-outline" target="_blank">Federal Unionists Network →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Dear<span>America</span></div>
+        <p class="footer-desc">A campaign platform for federal workers defending civil rights. Operated in partnership with Branch 4 and the Federal Unionists Network.</p>
+        <div class="footer-social" style="margin-top:20px;">
+          <a href="#" class="social-icon">IG</a>
+          <a href="#" class="social-icon">TK</a>
+          <a href="#" class="social-icon">BSky</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#letters">Read the Letters</a></li>
+          <li><a href="#demands">Our Demands</a></li>
+          <li><a href="#voices">Voices Speaking Out</a></li>
+          <li><a href="#share-your-story">Share Your Story</a></li>
+          <li><a href="#action">Take Action</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Partners</h4>
+        <ul>
+          <li><a href="https://www.branch-4.org" target="_blank">Branch 4</a></li>
+          <li><a href="https://www.federalunionists.net" target="_blank">Federal Unionists Network</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-bottom">
+      The identities of all contributing workers are protected. Letters may be read publicly by surrogates with the explicit consent of the original author.
+      Content on this page does not represent the official position of any government agency.
+    </p>
+  </footer>
+
+  <script>
+    // Filter buttons (visual only for preview)
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
